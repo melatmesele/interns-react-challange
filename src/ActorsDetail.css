@@ -1,0 +1,261 @@
+.container{
+   background-color: #E68A15;
+    width: auto;
+    height:300px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.circle {
+    margin:80px;
+    width: 150px;      
+    height: 150px;      
+    background-color: #AF887C;  
+    border-radius: 50%;  
+    display: flex;      
+    justify-content: center; 
+    align-items: center;  
+    color: white;       
+    font-family: Arial, sans-serif; 
+  }
+
+.firstLetter{
+    margin-top: 30px;
+    font-size: 40px;
+    margin-left: 10px;
+}
+  
+  .firstName {
+    position: absolute;
+    top: 100px;   
+    left: 300px;   
+    font-size: 24px; 
+    color: white;  
+    z-index: 10;     
+  }
+  .gender{
+    position: absolute;
+    top: 130px;   
+    left: 300px;  
+    font-size: 24px;  
+    color: #D7D7D7;     
+    z-index: 10;  
+  }
+  
+
+  .card {
+    padding-top: 30px;  
+    display: flex;
+    padding-left: 80px;
+    
+}
+.partOne{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.card1 , .card2,.card3 , .card4, .card5 , .card6 , .card7{
+    padding-top: 30px;
+    padding-left: 0px;
+    width:100px;
+    margin: 30px;
+}
+.card1 , .card2 {
+   
+    width:50px;
+}
+
+
+.card-header{
+    margin-bottom: 7px;
+    font-size: 11px;
+    width:200px
+}
+
+.card3{
+    width:150;
+}
+.card1{
+    align-items: start;
+    margin-right: 50px;
+}
+  
+  .films-section{
+    margin-top: -90px; 
+  }
+  .species-vehicles-homeworld-section{
+    padding-top: 1000px; 
+  }
+  .sectionTwo{
+    padding-right: 600px;
+}
+
+.films-container {
+    margin: 20px ; 
+    width: 900px;
+    display: flex;
+    height:300px;
+    flex-wrap: nowrap;
+    margin-left: 110px;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    gap: 15px; 
+}
+.vehicles-container, .starships-container{
+    margin: 20px ;
+    width: 1000px;
+    display: flex;
+    height:300px;
+    flex-wrap: nowrap;
+    margin-left: 110px;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px; 
+}
+
+.film-item , .vehicles-item , .starships-item{
+   
+    max-width: 300px; 
+    height: auto; 
+    background-color: white;
+    
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0.3px solid #E8E8E8;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.1);
+}
+.vehicles-item, .starships-item {
+    max-width: 350px; 
+    height: auto; 
+    background-color: white;
+    
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0.3px solid #E8E8E8;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.1);
+
+}
+
+.films-section  , .vehicles-section , .starships-section{
+    padding: 20px 0; 
+    position: relative;
+    overflow: hidden; 
+}
+.vehicles-container div , .starships-container div , .films-container div{
+    color:#E68A15;
+}
+
+  
+  .film-item p {
+    text-align: left; 
+    width: 100%; 
+    padding-left: 10px;
+    color:#E68A15;
+    padding-right: 0px;
+}
+.Filmheader {
+    text-align: center; 
+    width: 100%;
+    padding-left: 10px; 
+    font-size: 20px;
+    margin-bottom: 35px;
+    height: 40px;
+    color:#E68A15;
+    
+}
+
+.insider{
+    color:#D7D7D7; 
+    margin-top: 16px;
+}
+
+.key p{
+    margin-right: 40px;
+    width:auto;
+}
+
+.items{
+    display: flex;
+    margin-left: 9px;
+    color: white;
+    width:100%;
+    margin-bottom: -15px;
+
+}
+
+.films-section h4{
+    color:black;
+   margin-left:110px;
+   margin-top: 90px;
+   font-size: 24px;
+}
+
+.vehicles-item h5, .starships-item h5{
+    font-size: 25px;
+}
+.vehicles-section h4, .starships-section h4{
+    color:black;
+   margin-left:110px;
+   margin-top: 90px;
+   font-size: 24px;
+}
+
+.species-item{
+    display: flex;
+    margin-left: 90px;
+    padding-right: 50px;
+}
+.species-item .card4 {
+    margin-right: 100px;
+}
+.species-item .card5 {
+    margin-right: 100px;
+}
+.species-section h4{
+    color:black;
+   margin-left:110px;
+   margin-top: 70px;
+   margin-bottom: -30px;
+   font-size: 24px;
+
+}
+.species-section{
+    margin-top: -30px;
+}
+
+.space{
+    margin-top: 20px;
+
+}
+.footer{
+    width:auto;
+    height:100px;
+    background-color: #E68A15;
+    margin-top: 100px;
+}
+.vehicle-item-unavailable , .starship-item-unavailable{
+  margin-top: 130px;
+  margin-left: 140px;
+
+
+ 
+}

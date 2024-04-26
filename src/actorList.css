@@ -1,0 +1,77 @@
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+  }
+  
+  .actor-card {
+    width: calc(33.333% - 20px); 
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-right: 30px;
+    margin-top: 50px;
+    border-radius: 8px;
+    display: flex;
+    width: 300px;;
+    
+    flex-direction: column;
+    align-items: center; 
+  }
+  .actors-list{
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .actor-card h2 ,.actor-card p{
+    color:#E68A15;
+  }
+  .actor-card h2 {
+    margin: 10px 0;
+  }
+  
+ 
+  button {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #E68A15;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .topic{
+    margin-left:50px;
+    margin-top: 45px;
+    font-size: 24px;
+    
+  }
+
+
+  .actor-card p {
+    text-align: left; 
+    width: 100%; 
+    padding-left: 10px; 
+    margin-bottom: 4px;
+  }
+  .actor-card h2 {
+    text-align: center; 
+    width: 100%; 
+    padding-left: 10px; 
+  }
+  
+  
+  
