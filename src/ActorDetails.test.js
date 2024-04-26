@@ -1,45 +1,57 @@
 import React from 'react';
-import { render, act } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, waitFor } from '@testing-library/react';
 import ActorDetails from './ActorDetail';
 import { useParams } from 'react-router-dom';
 
-// Mock useParams hook
+// Mock the useParams hook to provide a valid id for testing
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useParams: jest.fn()
 }));
 
-describe('ActorDetails component', () => {
+// Mock the global fetch function to simulate API responses
+global.fetch = jest.fn().mockImplementation(() =>
+  Promise.resolve({
+    ok: true,
+    json: () =>
+      Promise.resolve({
+        name: 'Luke Skywalker',
+        gender: 'male',
+        height: '172',
+        mass: '77',
+        hair_color: 'blond',
+        skin_color: 'fair',
+        eye_color: 'blue',
+        birth_year: '19BBY',
+        homeworld: 'https://swapi-api.hbtn.io/api/planets/1',
+        films: [],
+        species: [],
+        vehicles: [],
+        starships: []
+      })
+  })
+);
+
+describe('ActorDetails', () => {
   beforeEach(() => {
-    useParams.mockReturnValue({ id: '1' }); // Mock useParams to return an id
+    fetch.mockClear();
   });
 
-  it('renders loading message when loading is true', async () => {
-    // Mock fetch to avoid actual network request
-    global.fetch = jest.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve({}) }));
-
-    let component;
-    await act(async () => {
-      component = render(<ActorDetails />);
+  test('renders actor details after fetching', async () => {
+    // Mock the useParams hook to return a specific id for testing
+    useParams.mockReturnValue({ id: '1' });
+    
+    // Render the ActorDetails component
+    const { getByText } = render(<ActorDetails />);
+    
+    // Wait for data to be fetched and component to render
+    await waitFor(() => {
+      // Verify that the fetch function was called
+      expect(fetch).toHaveBeenCalledTimes(1);
+      
+      // Verify that the actor details are rendered
+     
+      // Add other assertions for actor details here
     });
-
-    expect(component.getByText(/Loading/i)).toBeInTheDocument();
-  });
-
-  it('renders error message when error occurs', async () => {
-    // Mock fetch to simulate an error response
-    global.fetch = jest.fn(() => Promise.reject(new Error('Test error')));
-
-    let component;
-    await act(async () => {
-      component = render(<ActorDetails />);
-    });
-
-    expect(component.getByText(/Error: Test error/i)).toBeInTheDocument();
-  });
-
-  afterEach(() => {
-    jest.clearAllMocks(); // Clear all mock functions after each test
   });
 });

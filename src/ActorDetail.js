@@ -42,10 +42,16 @@ const ActorDetails = () => {
       const data = await response.json();
       setActor(data);
   
-      fetchDataForUrls(Array.isArray(data.films) ? data.films : [], setFilms);
-      fetchDataForUrls(Array.isArray(data.species) ? data.species : [], setSpecies);
-      fetchDataForUrls(Array.isArray(data.vehicles) ? data.vehicles : [], setVehicles);
-      fetchDataForUrls(Array.isArray(data.starships) ? data.starships : [], setStarships);
+      // Ensure data properties are available before accessing them
+      const filmsData = Array.isArray(data.films) ? data.films : [];
+      const speciesData = Array.isArray(data.species) ? data.species : [];
+      const vehiclesData = Array.isArray(data.vehicles) ? data.vehicles : [];
+      const starshipsData = Array.isArray(data.starships) ? data.starships : [];
+  
+      fetchDataForUrls(filmsData, setFilms);
+      fetchDataForUrls(speciesData, setSpecies);
+      fetchDataForUrls(vehiclesData, setVehicles);
+      fetchDataForUrls(starshipsData, setStarships);
   
       if (data.homeworld) {
         const homeworldResponse = await fetch(data.homeworld);
@@ -63,6 +69,7 @@ const ActorDetails = () => {
       setLoading(false);
     }
   };
+  
   
   useEffect(() => {
     fetchDetails();
